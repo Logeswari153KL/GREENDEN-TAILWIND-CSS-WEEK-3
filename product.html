@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Greenden — Products</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-green-50 text-gray-800 antialiased">
+
+  <!-- HEADER: same CSS-only menu/cart -->
+  <header class="sticky top-0 z-50 bg-green-600 text-white">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="index.html" class="font-semibold text-lg uppercase">GREENDEN</a>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="product.html" class="hover:underline">Products</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+        <a href="product.html" class="inline-flex items-center gap-2 bg-white text-green-700 px-3 py-1 rounded">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="text-sm font-medium">0</span>
+        </a>
+      </div>
+
+      <div class="md:hidden flex items-center gap-3">
+        <input id="cart-toggle-2" type="checkbox" class="peer-cart hidden" />
+        <label for="cart-toggle-2" class="inline-flex items-center p-2 bg-white text-green-700 rounded">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </label>
+
+        <input id="menu-toggle-2" type="checkbox" class="peer hidden" />
+        <label for="menu-toggle-2" class="p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </label>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <nav class="md:hidden fixed right-0 top-0 h-full w-3/4 max-w-xs bg-green-700 text-white transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-40">
+      <div class="p-4 flex justify-between items-center">
+        <span class="font-semibold">Menu</span>
+        <label for="menu-toggle-2" class="cursor-pointer">✕</label>
+      </div>
+      <div class="flex flex-col p-4 gap-3">
+        <a href="index.html" class="py-2 px-3 rounded hover:bg-green-600">Home</a>
+        <a href="product.html" class="py-2 px-3 rounded hover:bg-green-600">Products</a>
+        <a href="contact.html" class="py-2 px-3 rounded hover:bg-green-600">Contact</a>
+      </div>
+    </nav>
+
+    <!-- mobile cart -->
+    <aside class="fixed inset-0 hidden peer-cart:!block">
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="absolute right-0 top-0 h-full w-80 bg-white p-4 overflow-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="font-semibold text-green-900">Your Cart</h3>
+          <label for="cart-toggle-2" class="cursor-pointer text-gray-600">Close</label>
+        </div>
+        <p class="text-gray-600">Cart preview (static demo).</p>
+      </div>
+    </aside>
+  </header>
+
+  <!-- PRODUCTS MAIN -->
+  <main class="max-w-6xl mx-auto px-6 py-8">
+    <header class="text-center mb-6">
+      <h1 class="text-3xl font-semibold text-green-900">Our Products</h1>
+      <p class="text-sm text-gray-600">Select from a variety of indoor and outdoor plants.</p>
+    </header>
+
+    <!-- Search input (visual only, no JS) -->
+    <div class="flex justify-center mb-6">
+      <input type="search" placeholder="Search product name..." aria-label="Search products"
+             class="w-full md:w-2/3 p-3 border rounded-lg focus:outline-none focus:shadow-outline">
+    </div>
+
+    <!-- Product grid: mobile 1 column, tablet 2, desktop 4 -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Repeat these 16 product cards; ensure images exist in /images -->
+      <!-- 1 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/5.jpg" alt="Monstera" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Monstera Deliciosa</h3>
+        <p class="mt-1 font-semibold">₹ 2,500</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/6.jpg" alt="Spider Plant" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Spider Plant</h3>
+        <p class="mt-1 font-semibold">₹ 800</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/7.jpg" alt="Aloe Vera" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Aloe Vera</h3>
+        <p class="mt-1 font-semibold">₹ 450</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/8.jpg" alt="Peace Lily" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Peace Lily</h3>
+        <p class="mt-1 font-semibold">₹ 1,200</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/9.jpg" alt="Jade Plant" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Jade Plant</h3>
+        <p class="mt-1 font-semibold">₹ 700</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/10.jpg" alt="Snake Plant" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Snake Plant</h3>
+        <p class="mt-1 font-semibold">₹ 950</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/11.jpg" alt="Fiddle Leaf Fig" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Fiddle Leaf Fig</h3>
+        <p class="mt-1 font-semibold">₹ 3,500</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/12.jpg" alt="Areca Palm" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Areca Palm</h3>
+        <p class="mt-1 font-semibold">₹ 1,500</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/13.jpg" alt="Calathea" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Calathea</h3>
+        <p class="mt-1 font-semibold">₹ 1,100</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/14.jpg" alt="Rubber Plant" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Rubber Plant</h3>
+        <p class="mt-1 font-semibold">₹ 1,800</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 11 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/15.jpg" alt="ZZ Plant" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">ZZ Plant</h3>
+        <p class="mt-1 font-semibold">₹ 1,400</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 12 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/16.jpg" alt="Philodendron" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Philodendron</h3>
+        <p class="mt-1 font-semibold">₹ 900</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 13 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/1.jpg" alt="Fuchsia" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Fuchsia</h3>
+        <p class="mt-1 font-semibold">₹ 1,899</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 14 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/2.jpg" alt="Oxalis" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Oxalis</h3>
+        <p class="mt-1 font-semibold">₹ 1,499</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 15 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/3.jpg" alt="Begonia Rex" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Begonia Rex</h3>
+        <p class="mt-1 font-semibold">₹ 2,199</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+
+      <!-- 16 -->
+      <article class="bg-white p-4 rounded-xl shadow flex flex-col">
+        <img src="images/4.jpg" alt="Schefflera" class="w-full h-40 object-cover rounded-lg mb-3">
+        <h3 class="font-medium text-lg">Schefflera</h3>
+        <p class="mt-1 font-semibold">₹ 1,299</p>
+        <div class="mt-3 flex flex-col sm:flex-row gap-2">
+          <a href="product.html" class="w-full sm:flex-1 block text-center bg-green-700 text-white py-2 rounded text-sm">Add to Cart</a>
+          <a href="product.html" class="w-full sm:flex-1 block text-center border border-green-700 py-2 rounded text-sm">Buy Now</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Best sellers (inside product page) -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold text-green-900 mb-4">Best Sellers</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white p-4 rounded-xl text-center shadow">
+          <img src="images/1.jpg" alt="Fuchsia" class="w-full h-36 object-cover rounded-lg mb-3">
+          <h4 class="font-medium">Fuchsia</h4>
+          <p class="mt-1 font-semibold">₹ 1,899</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl text-center shadow">
+          <img src="images/2.jpg" alt="Oxalis" class="w-full h-36 object-cover rounded-lg mb-3">
+          <h4 class="font-medium">Oxalis</h4>
+          <p class="mt-1 font-semibold">₹ 1,499</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl text-center shadow">
+          <img src="images/3.jpg" alt="Begonia Rex" class="w-full h-36 object-cover rounded-lg mb-3">
+          <h4 class="font-medium">Begonia Rex</h4>
+          <p class="mt-1 font-semibold">₹ 2,199</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl text-center shadow">
+          <img src="images/4.jpg" alt="Schefflera" class="w-full h-36 object-cover rounded-lg mb-3">
+          <h4 class="font-medium">Schefflera</h4>
+          <p class="mt-1 font-semibold">₹ 1,299</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-green-600 p-4 text-center text-white mt-12">
+    <p>&copy;2025 Greenden.com</p>
+  </footer>
+</body>
+</html>
